@@ -3,7 +3,7 @@ import { destinationMap, destinations } from '../../data/homeContent'
 
 export default function DestinationSection() {
   return (
-    <section id="destinations" className="relative flex min-h-screen scroll-mt-28 items-center bg-[#fdbe02] p-2.5">
+    <section id="destinations" className="relative scroll-mt-28 bg-[#fdbe02] py-10 sm:py-14">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-center bg-no-repeat opacity-[0.12]"
@@ -12,13 +12,13 @@ export default function DestinationSection() {
           backgroundSize: 'contain',
         }}
       />
-      <div className="relative flex w-full flex-wrap gap-5 p-2.5 md:flex-nowrap md:items-center">
+      <div className="custom_container relative grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 xl:grid-cols-6">
         {destinations.map((place) => (
-          <div key={place.name} className="flex w-full flex-col gap-5 p-2.5 md:min-w-0 md:flex-1">
-            <Link to="/#trips" className="block transition-transform duration-400 hover:scale-110">
-              <img src={place.image} alt={place.alt} className="h-auto w-full" />
+          <div key={place.name} className="flex min-w-0 flex-col gap-3">
+            <Link to="/#trips" className="block overflow-hidden transition-transform duration-400 hover:scale-105">
+              <img src={place.image} alt={place.alt} className="aspect-[3/4] h-auto w-full object-cover" />
             </Link>
-            <h2 className="text-center font-sans text-[26px] leading-6.5 font-semibold text-black">{place.name}</h2>
+            <h2 className="text-center font-sans text-lg leading-tight font-semibold text-black sm:text-xl xl:text-[26px]">{place.name}</h2>
           </div>
         ))}
       </div>

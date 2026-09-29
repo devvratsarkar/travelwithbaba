@@ -5,16 +5,16 @@ export default function BlogSection() {
   return (
     <section id="blog" className="scroll-mt-28 bg-white">
       <div className="custom_container flex flex-col gap-5 py-2.5">
-        <h2 className="text-center font-sans text-[32px] leading-8 font-medium text-ink">Blogs</h2>
-        <ul className="grid gap-x-7.5 gap-y-9 md:grid-cols-3">
+        <h2 className="text-center font-sans text-2xl leading-tight font-medium text-ink sm:text-[32px] sm:leading-8">Blogs</h2>
+        <ul className="grid grid-cols-1 gap-x-7.5 gap-y-9 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <li key={post.title} className="overflow-hidden">
               <article className="flex flex-col">
-                <Link to="/#blog" className="relative mb-5 block overflow-hidden pb-66" tabIndex={-1}>
+                <Link to="/#blog" className="relative mb-5 block aspect-[3/2] overflow-hidden" tabIndex={-1}>
                   <img
                     src={post.image}
                     alt={post.title}
-                    className="absolute top-[calc(50%+1px)] left-[calc(50%+1px)] h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 scale-[1.01] transition-[filter] duration-300"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                 </Link>
                 <h3 className="font-sans text-ink">

@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
           {cards.map((review) => (
             <li
               key={`${review.name}-${review.offset}`}
-              className={`flex min-h-55 flex-col border border-[#e6e6e6] bg-white px-6 py-5 ${
+              className={`flex min-h-55 flex-col border border-[#e6e6e6] bg-white px-4 py-5 sm:px-6 ${
                 review.offset === 1 ? 'hidden md:flex' : ''
               } ${review.offset === 2 ? 'hidden lg:flex' : ''}`}
             >

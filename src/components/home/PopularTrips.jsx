@@ -6,7 +6,7 @@ export default function PopularTrips({ trips }) {
   return (
     <section id="trips" className="scroll-mt-28 bg-white py-2.5">
       <div className="custom_container flex flex-col gap-5">
-        <h2 className="mt-2 mb-4 text-center font-sans text-[32px] leading-[38.4px] font-medium text-black">
+        <h2 className="mt-2 mb-4 text-center font-sans text-2xl leading-tight font-medium text-black sm:text-[32px] sm:leading-[38.4px]">
           Explore Popular Trips
         </h2>
         <p className="mb-4 text-center font-sans text-base font-normal text-ink">
@@ -26,7 +26,7 @@ export default function PopularTrips({ trips }) {
                           Featured
                         </span>
                       )}
-                      <Link to="/#contact" className="group relative block h-75.75 overflow-hidden rounded-xs">
+                      <Link to="/#contact" className="group relative block aspect-[16/10] overflow-hidden rounded-xs sm:aspect-auto sm:h-64 lg:h-75.75">
                         <img
                           src={trip.image}
                           alt={trip.title}
@@ -35,16 +35,16 @@ export default function PopularTrips({ trips }) {
                       </Link>
                     </div>
                     <div className="bg-white pt-6">
-                      <p className="mb-2 inline-flex items-center gap-2 text-sm font-normal text-ink">
-                        <FiMapPin className="size-3.5 shrink-0" />
-                        {trip.location}
+                      <p className="mb-2 flex items-start gap-2 text-sm font-normal text-ink">
+                        <FiMapPin className="mt-0.5 size-3.5 shrink-0" />
+                        <span>{trip.location}</span>
                       </p>
-                      <h3 className="mb-3 font-sans text-lg font-semibold">
+                      <h3 className="mb-3 font-sans text-base font-semibold sm:text-lg">
                         <Link to="/#contact" className="text-[#101828] hover:text-[#f75d37]">
                           {trip.title}
                         </Link>
                       </h3>
-                      <div className="flex items-center gap-7.5 text-sm text-ink">
+                      <div className="flex flex-wrap items-center gap-4 text-sm text-ink sm:gap-7.5">
                         <p className="inline-flex items-center gap-2">
                           <FiCalendar className="size-5 shrink-0" />
                           <span>

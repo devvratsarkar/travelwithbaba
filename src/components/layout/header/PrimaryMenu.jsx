@@ -30,7 +30,7 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
                 to={item.to}
                 onClick={onNavigate}
                 className={`font-sans text-base font-normal transition-colors hover:text-gold ${
-                  mobile ? 'block px-2 py-3' : 'px-5 py-8'
+                  mobile ? 'block px-2 py-3' : 'px-3 py-6 text-sm xl:px-5 xl:py-8 xl:text-base'
                 } ${current ? 'text-gold' : 'text-white'}`}
               >
                 {item.label}

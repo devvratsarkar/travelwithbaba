@@ -1,3 +1,32 @@
 .custom_container {
   @apply mx-auto w-[95%] sm:w-[90%] lg:w-[95%] px-4 sm:px-6;
 }
+
+.logo-header {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.logo-footer {
+  width: 6rem;
+  height: 6rem;
+}
+
+@media (width >= 40rem) {
+  .logo-header {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .logo-footer {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+@media (width >= 64rem) {
+  .logo-header {
+    width: 5rem;
+    height: 5rem;
+  }
+}

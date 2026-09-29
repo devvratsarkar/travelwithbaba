@@ -27,7 +27,7 @@ export default function Footer() {
       <div className="custom_container grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
         <div className="sm:col-span-2 lg:col-span-4">
           <Link to="/" aria-label="Travel With Baba home" className="inline-flex">
-            <Logo className="h-32 w-32" />
+            <Logo className="logo-footer" />
           </Link>
           <p className="mt-4 max-w-xs text-[15px] leading-7 text-[#5c5c5c]">
             Customized holidays from Varanasi, with passport, visa, and travel insurance. Write to {contact.email}.

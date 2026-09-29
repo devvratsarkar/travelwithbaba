@@ -58,7 +58,7 @@ export default function ProcessSection() {
 
   return (
     <section className="bg-[#f8f8f8] py-11.5 overflow-hidden">
-      <ul ref={listRef} className="custom_container grid grid-cols-1 min-[768px]:grid-cols-4">
+      <ul ref={listRef} className="custom_container grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-0">
         {processSteps.map((step) => (
           <li key={step.title} data-step className="min-w-0">
             <div data-motion className="flex flex-col gap-6 p-2.5 text-center transition-transform duration-100 ease-linear">
@@ -66,8 +66,8 @@ export default function ProcessSection() {
                 <step.icon className="size-6.5" aria-hidden="true" />
               </span>
               <div>
-                <h3 className="mt-2 mb-4 font-sans text-lg font-medium text-black">{step.title}</h3>
-                <p className="text-base font-normal text-black">{step.text}</p>
+                <h3 className="mt-2 mb-3 font-sans text-base font-medium text-black sm:text-lg">{step.title}</h3>
+                <p className="text-sm font-normal text-black sm:text-base">{step.text}</p>
               </div>
             </div>
           </li>

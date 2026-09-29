@@ -31,7 +31,7 @@ export default function PrimaryHeader() {
     >
       <div className="custom_container grid grid-cols-[auto_1fr_auto] items-center">
         <Link to="/" aria-label="Travel With Baba home" className="py-4">
-          <Logo />
+          <Logo className="logo-header" />
         </Link>
 
         <nav aria-label="Primary" className="hidden justify-center lg:flex">

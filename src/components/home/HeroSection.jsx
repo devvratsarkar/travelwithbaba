@@ -32,11 +32,11 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden max-md:items-start">
+    <section className="relative flex min-h-svh items-center justify-center overflow-hidden px-4 max-md:items-start max-md:pt-28">
       <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline src={heroVideo} />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 flex w-full max-w-285 flex-col items-center gap-5 px-2.5 py-2.5 text-center max-md:mt-50">
-        <h1 className="mt-2 mb-4 w-full max-w-280 font-sans text-[60px] leading-18 font-medium text-white">
+      <div className="relative z-10 flex w-full max-w-285 flex-col items-center gap-4 px-2 py-8 text-center sm:gap-5 sm:py-10">
+        <h1 className="mb-2 flex w-full max-w-280 flex-col items-center gap-1 font-sans text-[clamp(2rem,7vw,3.75rem)] leading-none font-medium text-white md:block md:leading-[1.15]">
           {heroLead}{' '}
           <span ref={flipRef} className="headline-flip" style={width ? { width } : undefined}>
             {heroWords.map((word, wordIndex) => {
@@ -56,7 +56,7 @@ export default function HeroSection() {
             })}
           </span>
         </h1>
-        <div className="w-full max-w-280 text-base leading-8 font-normal text-white max-lg:text-sm">
+        <div className="w-full max-w-280 text-sm leading-6 font-normal text-white sm:text-base sm:leading-8">
           {heroParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
