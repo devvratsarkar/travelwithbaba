@@ -57,7 +57,7 @@ export default function ProcessSection() {
   }, [])
 
   return (
-    <section className="bg-[#f8f8f8] py-11.5">
+    <section className="bg-[#f8f8f8] py-11.5 overflow-hidden">
       <ul ref={listRef} className="mx-auto grid w-full max-w-285 grid-cols-1 min-[768px]:grid-cols-4">
         {processSteps.map((step) => (
           <li key={step.title} data-step className="min-w-0">

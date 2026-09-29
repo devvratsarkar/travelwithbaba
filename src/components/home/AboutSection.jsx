@@ -57,7 +57,7 @@ function ProgressStat({ label, value }) {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="scroll-mt-28 bg-white px-2.5">
+    <section id="about" className="scroll-mt-28 bg-white px-2.5 overflow-hidden">
       <div className="relative mx-auto w-full max-w-285 py-2.5">
         <img
           src={aboutRoute}
