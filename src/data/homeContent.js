@@ -110,6 +110,14 @@ export const trips = [
     featured: false,
     image: pkg('479717'),
   },
+  {
+    title: '1 Days Ramnagar Fort Tour',
+    location: 'Ramnagar, Ramnagar Fort',
+    duration: '1 Day',
+    activities: 'Sightseeing',
+    featured: false,
+    image: pkg('479720'),
+  },
 ]
 
 export const processSteps = [
