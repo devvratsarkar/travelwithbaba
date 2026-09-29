@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FiMapPin, FiPhone } from 'react-icons/fi'
-import { LuLuggage } from 'react-icons/lu'
 import { contact, footerLinks, navItems, socialLinks } from '../../data/homeContent'
+import Logo from '../ui/Logo'
 
 const tripTypes = footerLinks.find((item) => item.children)?.children ?? []
 
@@ -26,9 +26,8 @@ export default function Footer() {
     <footer id="contact" className="scroll-mt-28 border-t border-black/10 bg-white text-ink">
       <div className="mx-auto grid max-w-285 gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
         <div className="sm:col-span-2 lg:col-span-4">
-          <Link to="/" aria-label="Travel With Baba home" className="inline-flex items-center gap-2.5 text-black">
-            <LuLuggage className="size-8" aria-hidden="true" />
-            <span className="text-[13px] font-semibold tracking-[0.16em]">TRAVEL WITH BABA</span>
+          <Link to="/" aria-label="Travel With Baba home" className="inline-flex">
+            <Logo className="h-32 w-32" />
           </Link>
           <p className="mt-4 max-w-xs text-[15px] leading-7 text-[#5c5c5c]">
             Customized holidays from Varanasi, with passport, visa, and travel insurance. Write to {contact.email}.

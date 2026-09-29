@@ -1,10 +1,5 @@
-import { LuLuggage } from 'react-icons/lu'
+import logo from '../../assets/logo.webp'
 
-export default function Logo({ className = '' }) {
-  return (
-    <span className={`inline-flex flex-col items-center text-white ${className}`}>
-      <LuLuggage className="size-12" aria-hidden="true" />
-      <span className="mt-1 text-[11px] font-medium tracking-[0.22em]">TRAVEL WITH BABA</span>
-    </span>
-  )
+export default function Logo({ className = 'h-20 w-20' }) {
+  return <img src={logo} alt="Travel With Baba" className={`object-contain ${className}`} />
 }
