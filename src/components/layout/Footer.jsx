@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FaDribbble, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
-import { FiChevronDown, FiMapPin, FiPhone } from 'react-icons/fi'
+import { FiMapPin, FiPhone } from 'react-icons/fi'
 import { footerLinks } from '../../data/homeContent'
 import Logo from '../ui/Logo'
 
@@ -13,78 +13,70 @@ const footerSocial = [
   { label: 'Dribbble', icon: FaDribbble, href: 'https://dribbble.com' },
 ]
 
-const linkClass = 'font-footer text-[16px] leading-[24px] font-normal tracking-[-0.8px] text-footer-link hover:text-gold'
+const linkClass =
+  'font-footer text-[15px] leading-6 font-normal text-footer-link transition-colors hover:text-gold'
 
-export default function Footer() {
-  const [open, setOpen] = useState(false)
-  const [joined, setJoined] = useState(false)
+function FooterLink({ to, children }) {
   const { pathname, hash } = useLocation()
+  const active = to === '/' && pathname === '/' && !hash
 
   return (
-    <footer id="contact" className="scroll-mt-28 bg-white text-ink">
-      <div className="bg-[#1c1c1c] text-white">
-      <div className="mx-auto max-w-[1200px] px-6 pt-12 pb-8">
-        <div className="mb-8 flex flex-col items-center gap-3 text-center">
+    <Link to={to} className={active ? `${linkClass} text-gold` : linkClass}>
+      {children}
+    </Link>
+  )
+}
+
+export default function Footer() {
+  const [joined, setJoined] = useState(false)
+  const pageLinks = footerLinks.filter((item) => !item.children)
+  const tripTypes = footerLinks.find((item) => item.children)
+
+  return (
+    <footer id="contact" className="scroll-mt-28 bg-[#161616] text-white">
+      <div className="mx-auto max-w-285 px-6 pt-14 pb-10">
+        <div className="flex flex-col items-center text-center">
           <Logo />
-          <p className="font-footer text-[16px] leading-[24px] font-normal text-white">crafting your perfect getaway.</p>
+          <p className="mt-3 font-footer text-sm leading-6 text-footer-link">Crafting your perfect getaway.</p>
+          <span className="mt-5 h-px w-12 bg-gold" aria-hidden="true" />
         </div>
 
-        <div className="grid gap-10 md:grid-cols-3">
-          <div>
-            <h4 className="mb-4 font-footer text-[20px] leading-[24px] font-semibold text-white">quick links</h4>
-            <ul className="space-y-2">
-              {footerLinks.map((item) =>
-                item.children ? (
-                  <li key={item.label}>
-                    <button
-                      type="button"
-                      className={`inline-flex items-center gap-1 ${linkClass}`}
-                      aria-expanded={open}
-                      onClick={() => setOpen((value) => !value)}
-                    >
-                      {item.label}
-                      <FiChevronDown className={`size-4 transition ${open ? 'rotate-180' : ''}`} />
-                    </button>
-                    {open && (
-                      <ul className="mt-2 ml-3 space-y-2 border-l border-white/20 pl-3">
-                        {item.children.map((child) => (
-                          <li key={child.label}>
-                            <Link to={child.to} className={linkClass}>
-                              {child.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ) : (
-                  <li key={item.label}>
-                    <Link
-                      to={item.to}
-                      className={
-                        item.to === '/' && pathname === '/' && !hash
-                          ? 'font-footer text-[16px] leading-[24px] font-normal tracking-[-0.8px] text-gold'
-                          : linkClass
-                      }
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ),
-              )}
+        <div className="mt-12 grid gap-12 md:grid-cols-3 md:gap-10">
+          <nav aria-label="Footer">
+            <h2 className="font-footer text-lg leading-6 font-semibold text-white">Quick links</h2>
+            <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5">
+              {pageLinks.map((item) => (
+                <li key={item.label}>
+                  <FooterLink to={item.to}>{item.label}</FooterLink>
+                </li>
+              ))}
             </ul>
-          </div>
+            {tripTypes && (
+              <div className="mt-6">
+                <p className="font-footer text-sm leading-5 font-medium tracking-[0.08em] text-white/70 uppercase">
+                  {tripTypes.label}
+                </p>
+                <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2">
+                  {tripTypes.children.map((child) => (
+                    <li key={child.label}>
+                      <FooterLink to={child.to}>{child.label}</FooterLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </nav>
 
           <div>
-            <h4 className="mb-4 font-footer text-[20px] leading-[24px] font-semibold text-white">Contact Info</h4>
-            <ul className="space-y-3 font-footer text-[16px] leading-[24px] font-normal tracking-[-0.8px] text-footer-link">
-              <li className="flex gap-2">
-                <FiMapPin className="mt-0.5 size-5 shrink-0" />
+            <h2 className="font-footer text-lg leading-6 font-semibold text-white">Contact info</h2>
+            <ul className="mt-5 space-y-4 font-footer text-sm leading-6 text-footer-link">
+              <li className="flex gap-3">
+                <FiMapPin className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
                 <span>J S complex, Sarjapura - Attibele Rd, Bengaluru, Attibele, Karnataka 562107</span>
               </li>
               <li>
-                <a href="tel:9150017657" className="inline-flex items-center gap-2 hover:text-gold">
-                  <FiPhone className="size-5" />
+                <a href="tel:9150017657" className="inline-flex items-center gap-3 transition-colors hover:text-gold">
+                  <FiPhone className="size-5 shrink-0 text-gold" aria-hidden="true" />
                   9150017657
                 </a>
               </li>
@@ -92,15 +84,15 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-footer text-[20px] leading-[24px] font-semibold text-white">join our Newsletter</h4>
-            <p className="mb-4 font-footer text-[16px] leading-[24px] font-normal text-footer-link">
+            <h2 className="font-footer text-lg leading-6 font-semibold text-white">Join our newsletter</h2>
+            <p className="mt-5 font-footer text-sm leading-6 text-footer-link">
               Sign up for our newsletter to enjoy free marketing tips, inspirations, and more.
             </p>
             {joined ? (
-              <p className="text-gold">You are on the list.</p>
+              <p className="mt-5 font-footer text-sm leading-6 text-gold">You are on the list.</p>
             ) : (
               <form
-                className="flex overflow-hidden rounded-full border border-white/30"
+                className="mt-5 flex flex-col gap-3 sm:flex-row"
                 onSubmit={(event) => {
                   event.preventDefault()
                   setJoined(true)
@@ -114,9 +106,12 @@ export default function Footer() {
                   type="email"
                   required
                   placeholder="Email"
-                  className="min-w-0 flex-1 bg-transparent px-4 py-2.5 font-footer text-[16px] font-normal text-white outline-none placeholder:text-footer-link"
+                  className="h-11 min-w-0 flex-1 rounded-full border border-white/20 bg-white/5 px-4 font-footer text-sm text-white outline-none placeholder:text-white/40 focus:border-gold"
                 />
-                <button type="submit" className="bg-white px-5 text-[15px] leading-[15px] font-normal text-black">
+                <button
+                  type="submit"
+                  className="h-11 rounded-full bg-gold px-6 font-footer text-sm font-medium text-black transition hover:brightness-95"
+                >
                   Send
                 </button>
               </form>
@@ -125,15 +120,22 @@ export default function Footer() {
         </div>
       </div>
 
-      </div>
-      <div className="bg-white">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-center justify-between gap-4 px-6 py-4 sm:flex-row">
-          <p className="font-footer text-[16px] leading-[24px] font-normal text-black">© {new Date().getFullYear()} Travel With Baba. All Rights Reserved.</p>
-          <ul className="flex items-center gap-4 text-ink">
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-285 flex-col items-center justify-between gap-4 px-6 py-5 sm:flex-row">
+          <p className="font-footer text-sm leading-6 text-footer-link">
+            © {new Date().getFullYear()} Travel With Baba. All Rights Reserved.
+          </p>
+          <ul className="flex items-center gap-2.5">
             {footerSocial.map((item) => (
               <li key={item.label}>
-                <a href={item.href} target="_blank" rel="noreferrer" aria-label={item.label} className="hover:text-gold">
-                  <item.icon className="size-4" />
+                <a
+                  href={item.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={item.label}
+                  className="grid size-9 place-items-center rounded-full border border-white/15 text-white/80 transition hover:border-gold hover:text-gold"
+                >
+                  <item.icon className="size-3.5" aria-hidden="true" />
                 </a>
               </li>
             ))}

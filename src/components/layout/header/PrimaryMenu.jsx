@@ -29,7 +29,7 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
               <Link
                 to={item.to}
                 onClick={onNavigate}
-                className={`font-sans text-[16px] leading-[28px] font-normal transition-colors hover:text-gold ${
+                className={`font-sans text-base font-normal transition-colors hover:text-gold ${
                   mobile ? 'block px-2 py-3' : 'px-5 py-8'
                 } ${current ? 'text-gold' : 'text-white'}`}
               >
@@ -51,7 +51,7 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
                 className={
                   mobile
                     ? 'mb-2 ml-4 border-l border-white/20 pl-3'
-                    : 'absolute left-0 top-full z-20 min-w-52 bg-[#333333]/90 py-2 shadow-lg'
+                    : 'absolute left-0 top-full z-20 min-w-52 bg-black/90 py-2 shadow-lg'
                 }
               >
                 {item.children.map((child) => (

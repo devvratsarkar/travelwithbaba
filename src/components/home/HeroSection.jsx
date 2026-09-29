@@ -35,8 +35,8 @@ export default function HeroSection() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden max-md:items-start">
       <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline src={heroVideo} />
       <div className="absolute inset-0 bg-black/50" />
-      <div className="relative z-10 flex w-full max-w-[1140px] flex-col items-center gap-5 px-2.5 py-2.5 text-center max-md:mt-[200px]">
-        <h1 className="mt-2 mb-4 w-full max-w-[1120px] font-sans text-[60px] leading-[72px] font-medium text-white">
+      <div className="relative z-10 flex w-full max-w-285 flex-col items-center gap-5 px-2.5 py-2.5 text-center max-md:mt-50">
+        <h1 className="mt-2 mb-4 w-full max-w-280 font-sans text-[60px] leading-18 font-medium text-white">
           {heroLead}{' '}
           <span ref={flipRef} className="headline-flip" style={width ? { width } : undefined}>
             {heroWords.map((word, wordIndex) => {
@@ -56,7 +56,7 @@ export default function HeroSection() {
             })}
           </span>
         </h1>
-        <div className="w-full max-w-[1120px] text-[20px] leading-[1.75] font-normal text-white max-lg:text-[18px]">
+        <div className="w-full max-w-280 text-base leading-8 font-normal text-white max-lg:text-sm">
           {heroParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

@@ -4,8 +4,8 @@ import { searchSuggestions } from '../../data/homeContent'
 export default function SearchSection({ query, onQueryChange, onSearch }) {
   return (
     <section className="bg-white px-4 py-12 sm:py-16">
-      <div className="mx-auto max-w-[1140px] text-center">
-        <h2 className="font-sans text-[40px] leading-[40px] font-medium text-ink">
+      <div className="mx-auto max-w-285 text-center">
+        <h2 className="font-sans text-4xl font-medium text-ink">
           Customized India and International Trips
         </h2>
         <form
@@ -24,7 +24,7 @@ export default function SearchSection({ query, onQueryChange, onSearch }) {
             value={query}
             onChange={(event) => onQueryChange(event.target.value)}
             placeholder="Search Trips..."
-            className="h-[52px] w-full rounded-full border border-black/10 bg-white pr-16 pl-6 text-[14px] leading-[14px] font-normal text-black shadow-sm outline-none focus:border-primary"
+            className="h-13 w-full rounded-full border border-black/10 bg-white pr-16 pl-6 text-sm font-normal text-black shadow-sm outline-none focus:border-primary"
           />
           <button
             type="submit"
@@ -43,7 +43,7 @@ export default function SearchSection({ query, onQueryChange, onSearch }) {
                   onQueryChange(item)
                   onSearch(item)
                 }}
-                className="rounded-full bg-black/5 px-4 py-0.5 text-[14px] leading-[19.88px] font-normal text-[#061626] transition hover:bg-gold"
+                className="rounded-full bg-black/5 px-4 py-0.5 text-sm font-normal text-[#061626] transition hover:bg-gold"
               >
                 {item}
               </button>

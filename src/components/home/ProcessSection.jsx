@@ -57,17 +57,17 @@ export default function ProcessSection() {
   }, [])
 
   return (
-    <section className="bg-[#f8f8f8] py-[46px]">
-      <ul ref={listRef} className="mx-auto grid w-full max-w-[1140px] grid-cols-1 min-[768px]:grid-cols-4">
+    <section className="bg-[#f8f8f8] py-11.5">
+      <ul ref={listRef} className="mx-auto grid w-full max-w-285 grid-cols-1 min-[768px]:grid-cols-4">
         {processSteps.map((step) => (
           <li key={step.title} data-step className="min-w-0">
             <div data-motion className="flex flex-col gap-6 p-2.5 text-center transition-transform duration-100 ease-linear">
-              <span className="mx-auto grid size-[58px] place-items-center rounded-full bg-gold text-black">
-                <step.icon className="size-[26px]" aria-hidden="true" />
+              <span className="mx-auto grid size-14.5 place-items-center rounded-full bg-gold text-black">
+                <step.icon className="size-6.5" aria-hidden="true" />
               </span>
               <div>
-                <h3 className="mt-2 mb-4 font-sans text-[25px] leading-[43.75px] font-medium text-black">{step.title}</h3>
-                <p className="text-[16px] leading-7 font-normal text-black">{step.text}</p>
+                <h3 className="mt-2 mb-4 font-sans text-lg font-medium text-black">{step.title}</h3>
+                <p className="text-base font-normal text-black">{step.text}</p>
               </div>
             </div>
           </li>

@@ -5,18 +5,18 @@ import { MdOutlineHiking } from 'react-icons/md'
 export default function PopularTrips({ trips }) {
   return (
     <section id="trips" className="scroll-mt-28 bg-white px-2.5 py-2.5">
-      <div className="mx-auto flex w-full max-w-[1420px] flex-col gap-5">
+      <div className="mx-auto flex w-full max-w-355 flex-col gap-5">
         <h2 className="mt-2 mb-4 text-center font-sans text-[32px] leading-[38.4px] font-medium text-black">
           Explore Popular Trips
         </h2>
-        <p className="mb-[14.4px] text-center font-sans text-[16px] leading-[24px] font-normal text-ink">
+        <p className="mb-4 text-center font-sans text-base font-normal text-ink">
           Get started with handpicked top rated trips.
         </p>
 
         {trips.length === 0 ? (
           <p className="text-center text-muted">No trips match that search. Try another destination.</p>
         ) : (
-          <ul className="grid grid-cols-1 gap-[30px] md:grid-cols-2 lg:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3">
             {trips.map((trip) => (
                 <li key={trip.title}>
                   <article className="bg-white">
@@ -26,7 +26,7 @@ export default function PopularTrips({ trips }) {
                           Featured
                         </span>
                       )}
-                      <Link to="/#contact" className="group relative block h-[303px] overflow-hidden rounded-[8px]">
+                      <Link to="/#contact" className="group relative block h-75.75 overflow-hidden rounded-xs">
                         <img
                           src={trip.image}
                           alt={trip.title}
@@ -35,16 +35,16 @@ export default function PopularTrips({ trips }) {
                       </Link>
                     </div>
                     <div className="bg-white pt-6">
-                      <p className="mb-2 inline-flex items-center gap-2 text-[14px] leading-[22.4px] font-normal text-[#475467]">
+                      <p className="mb-2 inline-flex items-center gap-2 text-sm font-normal text-ink">
                         <FiMapPin className="size-3.5 shrink-0" />
                         {trip.location}
                       </p>
-                      <h3 className="mb-3 font-sans text-[20px] leading-[26px] font-semibold">
+                      <h3 className="mb-3 font-sans text-lg font-semibold">
                         <Link to="/#contact" className="text-[#101828] hover:text-[#f75d37]">
                           {trip.title}
                         </Link>
                       </h3>
-                      <div className="flex items-center gap-[30px] text-[14px] leading-[22px] text-[#475467]">
+                      <div className="flex items-center gap-7.5 text-sm text-ink">
                         <p className="inline-flex items-center gap-2">
                           <FiCalendar className="size-5 shrink-0" />
                           <span>

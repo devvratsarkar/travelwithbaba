@@ -37,7 +37,7 @@ function ProgressStat({ label, value }) {
   return (
     <div
       ref={trackRef}
-      className="h-[25px] w-full overflow-hidden rounded-full bg-[#eeeeee]"
+      className="h-6.25 w-full overflow-hidden rounded-full bg-[#eeeeee]"
       role="progressbar"
       aria-valuemin={0}
       aria-valuemax={100}
@@ -45,11 +45,11 @@ function ProgressStat({ label, value }) {
       aria-valuetext={`${value}% (${label})`}
     >
       <div
-        className="flex h-full items-center rounded-[2px] bg-gold font-sans text-[15px] leading-[25px] font-normal text-white transition-[width] duration-1000 ease-[ease-in-out]"
+        className="flex h-full items-center rounded-xs bg-gold font-sans text-sm font-normal text-white transition-[width] duration-1000 ease-[ease-in-out]"
         style={{ width }}
       >
-        <span className="min-w-0 flex-1 pl-[15px]">{label}</span>
-        <span className="shrink-0 pr-[15px]">{value}%</span>
+        <span className="min-w-0 flex-1 pl-3.75">{label}</span>
+        <span className="shrink-0 pr-3.75">{value}%</span>
       </div>
     </div>
   )
@@ -58,18 +58,18 @@ function ProgressStat({ label, value }) {
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-28 bg-white px-2.5">
-      <div className="relative mx-auto w-full max-w-[1140px] py-2.5">
+      <div className="relative mx-auto w-full max-w-285 py-2.5">
         <img
           src={aboutRoute}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute top-[-2px] left-[1054px] z-[1] hidden w-[27.456%] max-w-[27.456%] brightness-0 saturate-[0.98] min-[1025px]:block"
+          className="pointer-events-none absolute -top-0.5 left-263.5 z-1 hidden w-[27.456%] max-w-[27.456%] brightness-0 saturate-[0.98] min-[1025px]:block"
         />
         <img
           src={aboutPlanes}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute top-[549px] left-[932px] z-[1] hidden w-[40.351%] max-w-[40.351%] brightness-0 contrast-200 saturate-200 min-[1025px]:block"
+          className="pointer-events-none absolute top-137.25 left-93.2 z-1 hidden w-[40.351%] max-w-[40.351%] brightness-0 contrast-200 saturate-200 min-[1025px]:block"
         />
         <div className="grid grid-cols-1 gap-5 p-2.5 md:grid-cols-2">
           <img src={aboutImage} alt="family trip" className="block h-auto w-full" />
@@ -77,7 +77,7 @@ export default function AboutSection() {
             <div className="flex flex-col items-start gap-5 p-2.5">
               <Link
                 to="/#about"
-                className="inline-block rounded-[5px] bg-gold px-6 py-3 font-label text-[19px] leading-[19px] font-semibold text-black transition duration-300"
+                className="inline-block rounded-xs bg-gold px-6 py-3 font-label text-lg font-semibold text-black transition duration-300"
               >
                 Who We Are
               </Link>

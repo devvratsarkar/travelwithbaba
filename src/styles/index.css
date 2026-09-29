@@ -91,6 +91,42 @@ body {
   }
 }
 
+.testimonial-track {
+  animation: testimonial-in 0.35s ease;
+}
+
+.testimonial-track[data-dir='-1'] {
+  animation-name: testimonial-in-reverse;
+}
+
+@keyframes testimonial-in {
+  from {
+    opacity: 0.45;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes testimonial-in-reverse {
+  from {
+    opacity: 0.45;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-track {
+    animation: none;
+  }
+}
+
 @keyframes headline-flip-out {
   0% {
     opacity: 1;

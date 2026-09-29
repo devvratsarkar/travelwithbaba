@@ -26,10 +26,10 @@ export default function PrimaryHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-        scrolled || menuOpen ? 'bg-black/80' : 'bg-transparent'
+        scrolled || menuOpen ? 'bg-black' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto grid w-full max-w-[1440px] grid-cols-[auto_1fr_auto] items-center px-4 lg:px-6">
+      <div className="mx-auto grid w-full max-w-285 grid-cols-[auto_1fr_auto] items-center px-4 lg:px-6">
         <Link to="/" aria-label="Travel With Baba home" className="py-4">
           <Logo />
         </Link>

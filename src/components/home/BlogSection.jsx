@@ -3,38 +3,42 @@ import { posts } from '../../data/homeContent'
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="scroll-mt-28 bg-white px-4 pt-6 pb-10 sm:px-6">
-      <div className="mx-auto max-w-[1140px]">
-        <h2 className="mb-8 text-center font-sans text-[32px] leading-[32px] font-medium text-ink">Blogs</h2>
-        <ul className="grid gap-x-[30px] gap-y-9 md:grid-cols-3">
+    <section id="blog" className="scroll-mt-28 bg-white px-2.5">
+      <div className="mx-auto flex w-full max-w-285 flex-col gap-5 py-2.5">
+        <h2 className="text-center font-sans text-[32px] leading-8 font-medium text-ink">Blogs</h2>
+        <ul className="grid gap-x-7.5 gap-y-9 md:grid-cols-3">
           {posts.map((post) => (
-            <li key={post.title}>
-              <article>
-                <Link to="/#blog" className="block overflow-hidden">
-                  <img src={post.image} alt="" className="h-60 w-full object-cover" />
+            <li key={post.title} className="overflow-hidden">
+              <article className="flex flex-col">
+                <Link to="/#blog" className="relative mb-5 block overflow-hidden pb-66" tabIndex={-1}>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="absolute top-[calc(50%+1px)] left-[calc(50%+1px)] h-full w-auto max-w-none -translate-x-1/2 -translate-y-1/2 scale-[1.01] transition-[filter] duration-300"
+                  />
                 </Link>
-                <h3 className="mt-4 font-sans text-[18px] leading-[21.6px] font-medium text-ink">
-                  <Link to="/#blog" className="hover:text-primary">
+                <h3 className="font-sans text-ink">
+                  <Link to="/#blog" className="text-read">
                     {post.title}
                   </Link>
                 </h3>
-                <p className="mt-2 text-[12px] leading-[15.6px] font-normal text-date">{post.date}</p>
-                <p className="mt-3 text-[16px] leading-[24px] font-normal text-ink">{post.excerpt}</p>
-                <Link to="/#blog" className="mt-3 inline-block text-[12px] leading-[18px] font-bold text-read">
+                <p className="my-3 text-[12px] leading-[1.3] font-normal text-date">{post.date}</p>
+                <p className="mb-2.5 text-base font-normal text-ink">{post.excerpt}</p>
+                <Link to="/#blog" className="self-start text-sm text-read">
                   Read More »
                 </Link>
               </article>
             </li>
           ))}
         </ul>
-        <div className="mt-10 text-center">
-          <Link
-            to="/#blog"
-            className="inline-block bg-gold px-7 py-3 font-sans text-[15px] leading-[13px] font-normal text-black"
-          >
-            Discover More Blogs
-          </Link>
-        </div>
+      </div>
+      <div className="mx-auto w-full max-w-285 mt-10 pb-10 text-center">
+        <Link
+          to="/#blog"
+          className="inline-block rounded-xs bg-gold px-6 py-3 font-sans text-sm font-normal tracking-normal text-black"
+        >
+          Discover More Blogs
+        </Link>
       </div>
     </section>
   )

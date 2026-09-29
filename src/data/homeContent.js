@@ -28,7 +28,7 @@ export const navItems = [
     ],
   },
   { label: 'Blog', to: '/#blog' },
-  { label: 'Contact-Us', to: '/#contact' },
+  { label: 'Contact Us', to: '/#contact' },
 ]
 
 export const socialLinks = [

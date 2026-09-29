@@ -15,10 +15,10 @@ export default function DestinationSection() {
       <div className="relative flex w-full flex-wrap gap-5 p-2.5 md:flex-nowrap md:items-center">
         {destinations.map((place) => (
           <div key={place.name} className="flex w-full flex-col gap-5 p-2.5 md:min-w-0 md:flex-1">
-            <Link to="/#trips" className="block transition-transform duration-[400ms] hover:scale-110">
+            <Link to="/#trips" className="block transition-transform duration-400 hover:scale-110">
               <img src={place.image} alt={place.alt} className="h-auto w-full" />
             </Link>
-            <h2 className="text-center font-sans text-[26px] leading-[26px] font-semibold text-black">{place.name}</h2>
+            <h2 className="text-center font-sans text-[26px] leading-6.5 font-semibold text-black">{place.name}</h2>
           </div>
         ))}
       </div>
