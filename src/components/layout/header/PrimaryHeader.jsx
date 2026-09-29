@@ -29,7 +29,7 @@ export default function PrimaryHeader() {
         scrolled || menuOpen ? 'bg-black/80' : 'bg-transparent'
       }`}
     >
-      <div className="mx-auto grid w-full max-w-360 grid-cols-[auto_1fr_auto] items-center px-4 lg:px-6">
+      <div className="custom_container grid grid-cols-[auto_1fr_auto] items-center">
         <Link to="/" aria-label="Travel With Baba home" className="py-4">
           <Logo />
         </Link>

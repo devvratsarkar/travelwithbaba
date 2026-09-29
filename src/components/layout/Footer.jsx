@@ -24,7 +24,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="scroll-mt-28 border-t border-black/10 bg-white text-ink">
-      <div className="mx-auto grid max-w-285 gap-12 px-6 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+      <div className="custom_container grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-12 lg:gap-10">
         <div className="sm:col-span-2 lg:col-span-4">
           <Link to="/" aria-label="Travel With Baba home" className="inline-flex">
             <Logo className="h-32 w-32" />
@@ -119,7 +119,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-black/10">
-        <p className="mx-auto max-w-285 px-6 py-5 text-center text-sm text-[#5c5c5c] sm:text-left">
+        <p className="custom_container py-5 text-center text-sm text-[#5c5c5c] sm:text-left">
           © {new Date().getFullYear()} Travel With Baba. All Rights Reserved.
         </p>
       </div>

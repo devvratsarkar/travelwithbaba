@@ -3,8 +3,8 @@ import { posts } from '../../data/homeContent'
 
 export default function BlogSection() {
   return (
-    <section id="blog" className="scroll-mt-28 bg-white px-2.5">
-      <div className="mx-auto flex w-full max-w-285 flex-col gap-5 py-2.5">
+    <section id="blog" className="scroll-mt-28 bg-white">
+      <div className="custom_container flex flex-col gap-5 py-2.5">
         <h2 className="text-center font-sans text-[32px] leading-8 font-medium text-ink">Blogs</h2>
         <ul className="grid gap-x-7.5 gap-y-9 md:grid-cols-3">
           {posts.map((post) => (
@@ -32,7 +32,7 @@ export default function BlogSection() {
           ))}
         </ul>
       </div>
-      <div className="mx-auto mt-10 w-full max-w-285 pb-10 text-center">
+      <div className="custom_container mt-10 pb-10 text-center">
         <Link
           to="/#blog"
           className="inline-block rounded-xs bg-gold px-6 py-3 font-sans text-sm font-normal tracking-normal text-black"

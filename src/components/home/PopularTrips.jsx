@@ -4,8 +4,8 @@ import { MdOutlineHiking } from 'react-icons/md'
 
 export default function PopularTrips({ trips }) {
   return (
-    <section id="trips" className="scroll-mt-28 bg-white px-2.5 py-2.5">
-      <div className="mx-auto flex w-full max-w-355 flex-col gap-5">
+    <section id="trips" className="scroll-mt-28 bg-white py-2.5">
+      <div className="custom_container flex flex-col gap-5">
         <h2 className="mt-2 mb-4 text-center font-sans text-[32px] leading-[38.4px] font-medium text-black">
           Explore Popular Trips
         </h2>
