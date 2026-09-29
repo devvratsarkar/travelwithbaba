@@ -6,7 +6,7 @@ export default function SearchSection({ query, onQueryChange, onSearch }) {
     <section className="bg-white px-4 py-12 sm:py-16">
       <div className="mx-auto max-w-285 text-center">
         <h2 className="font-sans text-4xl font-medium text-ink">
-          Customized India and International Trips
+          Search Packages
         </h2>
         <form
           className="relative mt-8"

@@ -1,5 +1,4 @@
-import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'
-import { FaLightbulb, FaMapMarkedAlt, FaPlaneDeparture, FaSuitcaseRolling } from 'react-icons/fa'
+import { FaFacebookF, FaInstagram, FaLightbulb, FaMapMarkedAlt, FaPlaneDeparture, FaSuitcaseRolling, FaYoutube } from 'react-icons/fa'
 import { FiGift, FiHeadphones, FiMap, FiShield } from 'react-icons/fi'
 
 const asset = (path) => `https://packurbags.in/wp-content/uploads/${path}`
@@ -8,13 +7,24 @@ export const heroVideo = asset('2025/04/Untitled-design-13.mp4')
 
 export const heroLead = 'Dream. Explore.'
 
-export const heroWords = ['Create.', 'Experience.', 'Achieve.', 'Discover.']
+export const heroWords = ['Varanasi.', 'Sarnath.', 'Bodhgaya.', 'Prayagraj.']
 
 export const heroParagraphs = [
-  'True discovery isn’t just about the places you go—it’s about how you see them.',
-  'At Travel With Baba, we intend to reintroduce you to the world with new perspectives and stories worth telling.',
-  'As the best travel agent in Bangalore, your passport to unforgettable journeys starts right here.',
+  'Passport and visa services in Varanasi, with travel insurance, hotel booking, and tours across India.',
+  'Travel with Baba plans heritage trips, pilgrimages, and customized holidays at affordable prices.',
+  'Flights, rail tickets, cars, and hotel stays, arranged from Varanasi with Mr Shiv and the team.',
 ]
+
+export const contact = {
+  person: 'Mr Shiv',
+  role: 'CEO',
+  address: 'Varanasi, Uttar Pradesh, India',
+  phone: '+91 8707238117',
+  phoneHref: 'tel:+918707238117',
+  email: 'bhartibhole826@gmail.com',
+  whatsapp:
+    'https://api.whatsapp.com/send?phone=918707238117&text=Hello!%20I%20found%20your%20website%20and%20am%20interested%20in%20your%20packages.',
+}
 
 export const navItems = [
   { label: 'Home', to: '/' },
@@ -23,8 +33,8 @@ export const navItems = [
     label: 'Packages',
     to: '/#trips',
     children: [
-      { label: 'Group Trips', to: '/#trips' },
-      { label: 'Honeymoon Packages', to: '/#trips' },
+      { label: 'Varanasi Tours', to: '/#trips' },
+      { label: 'Pilgrimage Tours', to: '/#trips' },
     ],
   },
   { label: 'Blog', to: '/#blog' },
@@ -37,98 +47,68 @@ export const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com', icon: FaFacebookF },
 ]
 
-export const searchSuggestions = ['Andaman', 'Dandeli', 'Darjeeling', 'Dubai']
+export const searchSuggestions = ['Varanasi', 'Sarnath', 'Bodhgaya', 'Prayagraj']
 
 export const features = [
   { title: 'Personalized Itineraries', icon: FiMap },
   { title: '24/7 Traveler Support', icon: FiHeadphones },
-  { title: 'Exclusive Access & Perks', icon: FiGift },
-  { title: 'ATOL & ABTA Protected', icon: FiShield },
+  { title: 'Hotel & Flight Booking', icon: FiGift },
+  { title: 'Travel Insurance', icon: FiShield },
 ]
 
 export const destinations = [
-  { name: 'India', alt: 'tajmahal', image: asset('2025/04/1-819x1024.png') },
-  { name: 'Malaysia', alt: 'image from plane window', image: asset('2025/04/Untitled-design-72.png') },
-  { name: 'UAE', alt: 'tower from plane windoe', image: asset('2025/04/2.png') },
-  { name: 'Thailand', alt: 'plane window image', image: asset('2025/04/5-819x1024.png') },
-  { name: 'Vietnam', alt: 'aeroplane window', image: asset('2025/04/4-819x1024.png') },
-  { name: 'Singapore', alt: 'view frim aeroplane window', image: asset('2025/04/3-819x1024.png') },
+  { name: 'Varanasi', alt: 'Varanasi', image: asset('2025/04/1-819x1024.png') },
+  { name: 'Sarnath', alt: 'Sarnath', image: asset('2025/04/Untitled-design-72.png') },
+  { name: 'Mirzapur', alt: 'Mirzapur', image: asset('2025/04/2.png') },
+  { name: 'Bodhgaya', alt: 'Bodhgaya', image: asset('2025/04/5-819x1024.png') },
+  { name: 'Ramnagar', alt: 'Ramnagar', image: asset('2025/04/4-819x1024.png') },
+  { name: 'Prayagraj', alt: 'Prayagraj', image: asset('2025/04/3-819x1024.png') },
 ]
 
 export const destinationMap = asset('2025/04/Untitled-design-71.png')
 
+const pkg = (id) => `https://ttw.wlimg.com/package-images/photo-big/dir_73/2185031/${id}.jpg`
+
 export const trips = [
   {
-    title: 'Thailand Adventure',
-    location: 'Asia, Thailand',
-    duration: '5 Days',
-    activities: '8 Activities',
+    title: '3 Days Varanasi And Durga Temple Tour',
+    location: 'Varanasi, Durga Temple',
+    duration: '2 Nights / 3 Days',
+    activities: 'Sightseeing',
     featured: true,
-    image: asset('2025/03/grand-palace-1822487_1920-1536x592.jpg'),
+    image: pkg('479721'),
   },
   {
-    title: 'Shimla Manali Escape',
-    location: 'Manali, Shimla',
-    duration: '6 Days',
-    activities: '7 Activities',
-    featured: true,
-    image: asset('2025/03/snowfall-shimla-2-1536x1024.jpg'),
-  },
-  {
-    title: 'Lakshadweep Island Escape: 3 Nights/4 Days of Serenity and Adventure',
-    location: 'Lakshadweep',
-    duration: '4 Days',
-    activities: '6 Activities',
-    featured: true,
-    image: asset('2025/03/beautiful-tropical-island-zanzibar-aerial-view-sea-zanzibar-beach-tanzania-1536x1023.jpg'),
-  },
-  {
-    title: 'Royal Rajasthan Escape: 5 Nights/6 Days of Heritage, Culture, and Luxury',
-    location: 'India, Rajasthan',
-    duration: '6 Days',
-    activities: '5 Activities',
-    featured: true,
-    image: asset('2025/03/sea-beach-hotel-habitat-species-landscape-india-design-pool-1536x1024.jpg'),
-  },
-  {
-    title: 'Vietnam Explorer: 7-Day Cultural and Scenic Journey',
-    location: 'Asia, Vietnam',
-    duration: '7 Days',
-    activities: '9 Activities',
-    featured: true,
-    image: asset('2025/03/traditional-boats-front-ancient-architecture-hoi-vietnam-1536x1024.jpg'),
-  },
-  {
-    title: 'Dandeli Adventure: 2-Day Jungle Safari & Water Activities Escape',
-    location: 'Dandeli, India',
-    duration: '2 Days',
-    activities: '9 Activities',
-    featured: true,
-    image: asset('2025/03/tourists-camping-with-tent-near-fire-forest-1536x861.jpg'),
-  },
-  {
-    title: 'Maldives',
-    location: 'Maldives, Maldives',
-    duration: '6 Days',
-    activities: '6 Activities',
-    featured: false,
-    image: asset('2025/11/beach-666122_1920-1536x1028.jpg'),
-  },
-  {
-    title: 'Majestic Kashmir: 5N/6D Scenic Escape with Gulmarg Gondola & Houseboat Stay',
-    location: 'Asia, India, Kashmir',
-    duration: '6 Days',
-    activities: '6 Activities',
-    featured: false,
-    image: asset('2025/05/beautiful-winter-landscape-with-snow-mountains-icy-water-1-1536x1024.jpg'),
-  },
-  {
-    title: 'Ladakh X-treme Bike Expedition with Travel With Baba',
-    location: 'Asia, India, Ladakh',
+    title: '1 Days Varanasi - Durga Temple And Vishwanath Temple Tour',
+    location: 'Varanasi, Kashi Vishwanath Temple, Ramnagar Fort',
     duration: '1 Day',
-    activities: '9 Activities',
+    activities: 'Pilgrimage',
+    featured: true,
+    image: pkg('479720'),
+  },
+  {
+    title: '4 Days Mirzapur - Varanasi And Durga Temple Tour',
+    location: 'Mirzapur, Varanasi, Durga Temple',
+    duration: '3 Nights / 4 Days',
+    activities: 'Sightseeing',
+    featured: true,
+    image: pkg('479719'),
+  },
+  {
+    title: '5 Days Varanasi - Bodhgaya And Prayagraj Tour',
+    location: 'Prayagraj, Varanasi, Bodhgaya, Sarnath, Gaya',
+    duration: '4 Nights / 5 Days',
+    activities: 'Pilgrimage',
+    featured: true,
+    image: pkg('479718'),
+  },
+  {
+    title: '1 Days Sarnath Tour Package',
+    location: 'Sarnath',
+    duration: '1 Day',
+    activities: 'Sightseeing',
     featured: false,
-    image: asset('2025/05/ladakh-DSC06593-1536x1024.jpg'),
+    image: pkg('479717'),
   },
 ]
 
@@ -163,63 +143,52 @@ export const aboutPlanes = 'https://wptravelenginedemo.com/travel-monster/wp-con
 
 export const testimonials = [
   {
-    name: 'Divyashree R',
-    text: 'We booked the Kashmir package with them. We had a wonderful experience with this team. They are a great team with good accommodations and food. They guided us very well and took good care of us.',
+    name: '02 Mar 2026',
+    text: 'I was reaching out to hundreds of travel agents in the past one year to get exclusive travel deals. I came in contact with this agent through my relative. And surprisingly, they offered me the best travel package including complete itinerary and other additional facilities such as car transfer, sightseeing, accommodation, and others.',
   },
   {
-    name: 'Bhuvana Raj',
-    text: 'We booked a 5 day trip to Kashmir through a friend’s recommendation. All through our trip, every event was organised day wise and hour wise. We visited Gulmarg, Pahalgam, Sonmarg, and Srinagar.',
+    name: '12 Mar 2026',
+    text: 'Traveling is my passion. So, I always remain in search of the best travel deals. And, thus I hunt for reliable travel agents that offer the best deals in the market. I found this company while browsing different websites and it caught my attention as it was offering a 3 day and 4 night package at very reasonable prices. Since then, I recommend this website to everyone.',
   },
   {
-    name: 'Ashik E',
-    text: 'Special thanks for helping me travel to Kashmir. Throughout the journey the team stayed in touch every day. Kudos!',
-  },
-  {
-    name: 'Shradda P',
-    text: 'From start to finish, everything was seamless. I truly appreciate the effort and care that made our Kashmir trip special. I am looking forward to choosing this agency for future travels.',
+    name: '19 Mar 2026',
+    text: 'We are looking for a travel agent that provides tour packages to exotic locations. I am really glad that I found this organization. Unlike others, it has genuine connections and thus it offers interesting packages. I would genuinely like to recommend this company to everyone.',
   },
 ]
 
 export const posts = [
   {
-    title: 'Best International Holiday Destinations for 2026: Where Should You Travel Next?',
-    date: '2026-09-25',
+    title: 'Passport and Visa Help from Varanasi',
+    date: '2026-03-02',
     excerpt:
-      'Find the best international holiday destinations for 2026 including Thailand, Bali, Vietnam, and more. Budget tips and real travel advice for Indian travelers.',
+      'Travel with Baba helps with passport forms, student visas, and work permits. Share your identity and address papers, and the Varanasi desk guides the filing.',
     image: asset('2026/08/image_0-14.png'),
   },
   {
-    title: 'Vietnam Travel Guide 2026: Best Places to Visit, Visa Tips, and Real Travel Costs',
-    date: '2026-09-22',
+    title: 'A Varanasi Temple Circuit: Ghats, Durga Temple, and Kashi Vishwanath',
+    date: '2026-03-12',
     excerpt:
-      'Planning your Vietnam trip? This Vietnam travel guide covers the best places to visit in 2026, visa requirements, real costs, and insider tips.',
+      'The one-day Varanasi tour covers Durga Temple, Kashi Vishwanath Temple, and Ramnagar Fort. Longer stays add Sarnath, Mirzapur, and time on the ghats.',
     image: asset('2026/08/image_0-13.png'),
   },
   {
-    title: 'Maldives Islands Travel Guide: Best Atolls and Resorts for Your 2026 Trip',
-    date: '2026-09-19',
+    title: 'Bodhgaya and Prayagraj from Varanasi',
+    date: '2026-03-19',
     excerpt:
-      'Plan your Maldives trip right. Best islands, atolls, resorts, and island hopping tips from travel experts. Book smart, dive better.',
+      'The five-day tour links Prayagraj, Varanasi, Bodhgaya, Sarnath, Allahabad Fort, and Gaya. Ask for the price, then we arrange the stays and the road plan.',
     image: asset('2026/08/image_0-12.png'),
   },
 ]
 
 export const footerLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'All Trips', to: '/#trips' },
   {
-    label: 'Trip Types',
+    label: 'Trip types',
     children: [
-      { label: 'Nature Friendly', to: '/#trips' },
-      { label: 'Child-friendly', to: '/#trips' },
-      { label: 'Cultural', to: '/#trips' },
-      { label: 'Budget Travel', to: '/#trips' },
-      { label: 'Home Stay', to: '/#trips' },
+      { label: 'Culture & Heritage', to: '/#trips' },
+      { label: 'Religious & Pilgrimage', to: '/#trips' },
+      { label: 'Monuments & History', to: '/#trips' },
+      { label: 'Sightseeing', to: '/#trips' },
+      { label: 'Boating', to: '/#trips' },
     ],
   },
-  { label: 'Blog', to: '/#blog' },
-  { label: 'Pages', to: '/#about' },
-  { label: 'India', to: '/#destinations' },
-  { label: 'Hiking', to: '/#trips' },
-  { label: 'Rafting', to: '/#trips' },
 ]

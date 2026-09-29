@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
   }))
 
   return (
-    <section className="bg-white px-4 py-16 sm:px-6">
+    <section id="testimonials" className="scroll-mt-28 bg-white px-4 py-16 sm:px-6">
       <div className="mx-auto max-w-285">
         <div className="mb-8 flex items-center justify-between gap-3">
           <h2 className="min-w-0 font-sans text-xl font-bold tracking-[-0.02em] text-black sm:text-2xl sm:leading-none">

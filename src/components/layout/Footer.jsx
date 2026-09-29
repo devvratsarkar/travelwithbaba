@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FiMapPin, FiPhone } from 'react-icons/fi'
 import { LuLuggage } from 'react-icons/lu'
-import { footerLinks, navItems, socialLinks } from '../../data/homeContent'
+import { contact, footerLinks, navItems, socialLinks } from '../../data/homeContent'
 
 const tripTypes = footerLinks.find((item) => item.children)?.children ?? []
 
@@ -31,7 +31,7 @@ export default function Footer() {
             <span className="text-[13px] font-semibold tracking-[0.16em]">TRAVEL WITH BABA</span>
           </Link>
           <p className="mt-4 max-w-xs text-[15px] leading-7 text-[#5c5c5c]">
-            Crafting your perfect getaway, from Bangalore to destinations across India and the world.
+            Customized holidays from Varanasi, with passport, visa, and travel insurance. Write to {contact.email}.
           </p>
           <ul className="mt-6 flex items-center gap-1">
             {socialLinks.map((item) => (
@@ -77,12 +77,14 @@ export default function Footer() {
           <ul className="mt-4 space-y-3 text-[15px] leading-6 text-[#5c5c5c]">
             <li className="flex gap-2.5">
               <FiMapPin className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-              <span>J S complex, Sarjapura - Attibele Rd, Bengaluru, Attibele, Karnataka 562107</span>
+              <span>
+                {contact.person}, {contact.address}
+              </span>
             </li>
             <li>
-              <a href="tel:9150017657" className="inline-flex items-center gap-2.5 transition-colors hover:text-black">
+              <a href={contact.phoneHref} className="inline-flex items-center gap-2.5 transition-colors hover:text-black">
                 <FiPhone className="size-4 shrink-0" aria-hidden="true" />
-                9150017657
+                {contact.phone}
               </a>
             </li>
           </ul>

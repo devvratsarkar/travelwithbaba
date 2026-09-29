@@ -86,16 +86,14 @@ export default function AboutSection() {
               </h2>
               <div className="font-sans text-[16px] leading-6 font-normal text-black">
                 <p className="mb-[14.4px]">
-                  Looking for your next big escape? With Travel With Baba, every trip is more than just a vacation – it
-                  is an experience tailored to you. Our dedicated team creates one-of-a-kind itineraries that capture
-                  both the excitement of journeying but also make room for relaxing, depending on what you seek,
-                  excitement or relaxation. And as one of the best travel agents Bangalore focused on international
-                  travel, you can meet your next journey across borders easily and stylishly.
+                  Travel with Baba, based in Varanasi, Uttar Pradesh, offers tour programs across India and customized
+                  holiday packages at affordable prices. A heritage tour, a pilgrimage, a beach holiday, or a quieter
+                  getaway can all be planned with comfortable transport and a good hotel.
                 </p>
                 <p className="mb-[14.4px]">
-                  As one of the reputed travel agencies in Bangalore, we provide our clients with memorable travel
-                  experiences that were effortless, enjoyable, and safe. For all your travel needs, we are proud to be
-                  one of the best tour operator in Bangalore and your gateway to memories that last a lifetime!
+                  The same desk books flights, rail tickets, cars, and coaches, and helps with passport, visa, and
+                  travel insurance. Private events, meetings, and conferences are arranged here too, with Mr Shiv
+                  leading the Varanasi team.
                 </p>
               </div>
               {stats.map((stat) => (

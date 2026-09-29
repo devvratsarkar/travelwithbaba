@@ -10,7 +10,7 @@ export default function PopularTrips({ trips }) {
           Explore Popular Trips
         </h2>
         <p className="mb-4 text-center font-sans text-base font-normal text-ink">
-          Get started with handpicked top rated trips.
+          Packages from Varanasi. Price on request.
         </p>
 
         {trips.length === 0 ? (

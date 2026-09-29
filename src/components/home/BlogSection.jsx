@@ -32,7 +32,7 @@ export default function BlogSection() {
           ))}
         </ul>
       </div>
-      <div className="mx-auto w-full max-w-285 mt-10 pb-10 text-center">
+      <div className="mx-auto mt-10 w-full max-w-285 pb-10 text-center">
         <Link
           to="/#blog"
           className="inline-block rounded-xs bg-gold px-6 py-3 font-sans text-sm font-normal tracking-normal text-black"
