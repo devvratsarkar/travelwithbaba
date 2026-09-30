@@ -1,13 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FiMenu, FiX } from 'react-icons/fi'
+import { FiMenu } from 'react-icons/fi'
 import { socialLinks } from '../../../data/homeContent'
 import Logo from '../../ui/Logo'
+import OffCanvasMenu from './OffCanvasMenu'
 import PrimaryMenu from './PrimaryMenu'
 
 export default function PrimaryHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const closeMenu = useCallback(() => setMenuOpen(false), [])
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -15,13 +17,6 @@ export default function PrimaryHeader() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [menuOpen])
 
   return (
     <header
@@ -55,37 +50,20 @@ export default function PrimaryHeader() {
             ))}
           </ul>
           <button
+            id="mobile-menu-button"
             type="button"
             className="grid size-11 place-items-center text-white lg:hidden"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label="Open menu"
             aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen(true)}
           >
-            {menuOpen ? <FiX className="size-7" /> : <FiMenu className="size-7" />}
+            <FiMenu className="size-7" />
           </button>
         </div>
       </div>
 
-      {menuOpen && (
-        <nav aria-label="Mobile" className="border-t border-white/10 bg-black/90 px-6 py-4 lg:hidden">
-          <PrimaryMenu mobile onNavigate={() => setMenuOpen(false)} />
-          <ul className="mt-4 flex gap-2 border-t border-white/10 pt-4">
-            {socialLinks.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={item.label}
-                  className="grid size-11 place-items-center text-gold"
-                >
-                  <item.icon className="size-5" />
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <OffCanvasMenu open={menuOpen} onClose={closeMenu} />
     </header>
   )
 }

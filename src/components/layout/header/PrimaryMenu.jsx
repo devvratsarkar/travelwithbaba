@@ -18,6 +18,7 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
       {navItems.map((item) => {
         const current = isCurrent(item.to, pathname, hash)
         const hasChildren = Boolean(item.children?.length)
+        const expanded = openItem === item.label
         return (
           <li
             key={item.label}
@@ -25,13 +26,15 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
             onMouseEnter={() => !mobile && setOpenItem(item.label)}
             onMouseLeave={() => !mobile && setOpenItem(null)}
           >
-            <div className="flex items-center">
+            <div className={mobile ? 'flex items-center gap-1' : 'flex items-center'}>
               <Link
                 to={item.to}
                 onClick={onNavigate}
-                className={`font-sans text-base font-normal transition-colors hover:text-gold ${
-                  mobile ? 'block px-2 py-3' : 'px-3 py-6 text-sm xl:px-5 xl:py-8 xl:text-base'
-                } ${current ? 'text-gold' : 'text-white'}`}
+                className={`font-sans transition-colors hover:text-gold ${
+                  mobile
+                    ? 'block min-w-0 flex-1 rounded-lg px-3 py-3.5 text-[15px] font-medium'
+                    : 'px-3 py-6 text-sm xl:px-5 xl:py-8 xl:text-base'
+                } ${current ? (mobile ? 'bg-gold/15 text-gold' : 'text-gold') : 'text-white'}`}
               >
                 {item.label}
               </Link>
@@ -39,18 +42,21 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
                 <button
                   type="button"
                   aria-label={`${item.label} submenu`}
-                  className="p-2 text-white"
-                  onClick={() => setOpenItem(openItem === item.label ? null : item.label)}
+                  aria-expanded={expanded}
+                  className={`grid size-10 shrink-0 place-items-center rounded-lg transition-colors ${
+                    expanded ? 'bg-gold/15 text-gold' : 'text-white'
+                  }`}
+                  onClick={() => setOpenItem(expanded ? null : item.label)}
                 >
-                  <FiChevronDown className="size-4" />
+                  <FiChevronDown className={`size-4 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`} />
                 </button>
               )}
             </div>
-            {hasChildren && (mobile ? openItem === item.label : openItem === item.label) && (
+            {hasChildren && expanded && (
               <ul
                 className={
                   mobile
-                    ? 'mb-2 ml-4 border-l border-white/20 pl-3'
+                    ? 'mb-1 ml-3 space-y-0.5 border-l-2 border-gold py-1 pl-2'
                     : 'absolute left-0 top-full z-20 min-w-52 bg-black/90 py-2 shadow-lg'
                 }
               >
@@ -59,7 +65,9 @@ export default function PrimaryMenu({ mobile = false, onNavigate }) {
                     <Link
                       to={child.to}
                       onClick={onNavigate}
-                      className="block px-5 py-3 text-sm text-white transition-colors hover:text-gold"
+                      className={`block text-sm transition-colors hover:text-gold ${
+                        mobile ? 'rounded-md px-3 py-2.5' : 'px-5 py-3'
+                      } ${isCurrent(child.to, pathname, hash) ? 'text-gold' : 'text-white'}`}
                     >
                       {child.label}
                     </Link>
