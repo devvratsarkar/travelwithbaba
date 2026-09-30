@@ -39,7 +39,7 @@ export default function OffCanvasMenu({ open, onClose }) {
         type="button"
         aria-label="Close menu"
         tabIndex={open ? 0 : -1}
-        className={`absolute inset-0 bg-black/60 transition-opacity duration-300 motion-reduce:transition-none ${
+        className={`absolute inset-0 bg-navy/60 transition-opacity duration-300 motion-reduce:transition-none ${
           open ? 'opacity-100' : 'opacity-0'
         }`}
         onClick={onClose}
@@ -48,7 +48,7 @@ export default function OffCanvasMenu({ open, onClose }) {
         id="mobile-menu"
         aria-label="Mobile"
         aria-hidden={!open}
-        className={`absolute inset-y-0 right-0 flex w-full flex-col bg-black shadow-2xl transition-transform duration-300 motion-reduce:transition-none sm:w-96 ${
+        className={`band-navy absolute inset-y-0 right-0 flex w-full flex-col shadow-2xl transition-transform duration-300 motion-reduce:transition-none sm:w-96 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

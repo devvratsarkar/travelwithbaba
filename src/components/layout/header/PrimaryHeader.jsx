@@ -21,7 +21,7 @@ export default function PrimaryHeader() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-colors duration-300 ${
-        scrolled || menuOpen ? 'bg-black/80' : 'bg-transparent'
+        scrolled || menuOpen ? 'bg-navy/92' : 'bg-transparent'
       }`}
     >
       <div className="custom_container grid grid-cols-[auto_1fr_auto] items-center">

@@ -34,7 +34,7 @@ export default function HeroSection() {
   return (
     <section className="relative flex min-h-svh items-center justify-center overflow-hidden px-5 pt-24 pb-16 md:px-4 md:py-8">
       <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline src={heroVideo} />
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="hero-wash absolute inset-0" />
       <div className="relative z-10 flex w-full max-w-285 flex-col items-center gap-6 px-1 text-center sm:gap-7">
         <h1 className="flex w-full max-w-280 flex-col items-center font-sans text-[clamp(2.15rem,8.5vw,3.75rem)] leading-[0.95] font-medium text-white drop-shadow-[0_2px_16px_rgba(0,0,0,0.55)] md:block md:leading-[1.15]">
           {heroLead}{' '}
@@ -56,7 +56,7 @@ export default function HeroSection() {
             })}
           </span>
         </h1>
-        <div className="flex w-full max-w-md flex-col gap-3 text-[15px] leading-6 font-normal text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)] sm:max-w-280 sm:gap-4 sm:text-base sm:leading-8">
+        <div className="flex w-full max-w-md flex-col gap-3 text-[15px] leading-6 font-normal text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.65)] sm:max-w-280 sm:gap-0 sm:text-base sm:leading-8">
           {heroParagraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

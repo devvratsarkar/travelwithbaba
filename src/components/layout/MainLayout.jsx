@@ -1,10 +1,24 @@
+import { useEffect } from 'react'
 import { FaWhatsapp } from 'react-icons/fa'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import { contact } from '../../data/homeContent'
 import Footer from './Footer'
 import PrimaryHeader from './header/PrimaryHeader.jsx'
 
 export default function MainLayout() {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(hash.slice(1))
+      if (target) {
+        target.scrollIntoView()
+        return
+      }
+    }
+    window.scrollTo(0, 0)
+  }, [pathname, hash])
+
   return (
     <div className="min-h-svh bg-white text-ink">
       <PrimaryHeader />

@@ -3,6 +3,7 @@
 
 @theme {
   --color-primary: #147dfe;
+  --color-navy: #06284d;
   --color-gold: #ffd600;
   --color-ink: #333333;
   --color-muted: #475467;
@@ -28,6 +29,14 @@ body {
   margin: 0;
   min-width: 320px;
   color: var(--color-ink);
+}
+
+.band-navy {
+  background: linear-gradient(145deg, #06284d 0%, #0c4a96 52%, #147dfe 100%);
+}
+
+.hero-wash {
+  background: linear-gradient(180deg, rgba(6, 40, 77, 0.62) 0%, rgba(10, 74, 156, 0.3) 46%, rgba(6, 40, 77, 0.55) 100%);
 }
 
 .headline-flip {

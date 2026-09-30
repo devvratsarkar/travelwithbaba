@@ -1,5 +1,6 @@
 import { FaFacebookF, FaInstagram, FaLightbulb, FaMapMarkedAlt, FaPlaneDeparture, FaSuitcaseRolling, FaYoutube } from 'react-icons/fa'
 import { FiGift, FiHeadphones, FiMap, FiShield } from 'react-icons/fi'
+import { packageCategories } from './packages'
 
 const asset = (path) => `https://packurbags.in/wp-content/uploads/${path}`
 
@@ -31,11 +32,12 @@ export const navItems = [
   { label: 'About Us', to: '/#about' },
   {
     label: 'Packages',
-    to: '/#trips',
-    children: [
-      { label: 'Varanasi Tours', to: '/#trips' },
-      { label: 'Pilgrimage Tours', to: '/#trips' },
-    ],
+    to: '/packages',
+    children: packageCategories.map((category) => ({
+      label: category.label,
+      to: `/packages/category/${category.slug}`,
+      group: category.group,
+    })),
   },
   { label: 'Blog', to: '/#blog' },
   { label: 'Contact Us', to: '/#contact' },
@@ -77,6 +79,7 @@ export const trips = [
     activities: 'Sightseeing',
     featured: true,
     image: pkg('479721'),
+    slug: '3-days-varanasi-and-durga-temple-tour',
   },
   {
     title: '1 Days Varanasi - Durga Temple And Vishwanath Temple Tour',
@@ -85,6 +88,7 @@ export const trips = [
     activities: 'Pilgrimage',
     featured: true,
     image: pkg('479720'),
+    slug: '1-days-varanasi-durga-temple-and-vishwanath-temple-tour',
   },
   {
     title: '4 Days Mirzapur - Varanasi And Durga Temple Tour',
@@ -93,6 +97,7 @@ export const trips = [
     activities: 'Sightseeing',
     featured: true,
     image: pkg('479719'),
+    slug: '4-days-mirzapur-varanasi-and-durga-temple-tour',
   },
   {
     title: '5 Days Varanasi - Bodhgaya And Prayagraj Tour',
@@ -101,6 +106,7 @@ export const trips = [
     activities: 'Pilgrimage',
     featured: true,
     image: pkg('479718'),
+    slug: '5-days-varanasi-bodhgaya-and-prayagraj-tour',
   },
   {
     title: '1 Days Sarnath Tour Package',
@@ -109,6 +115,7 @@ export const trips = [
     activities: 'Sightseeing',
     featured: false,
     image: pkg('479717'),
+    slug: '1-days-sarnath-tour-package',
   },
   {
     title: '1 Days Ramnagar Fort Tour',

@@ -26,7 +26,7 @@ export default function PopularTrips({ trips }) {
                           Featured
                         </span>
                       )}
-                      <Link to="/#contact" className="group relative block aspect-[16/10] overflow-hidden rounded-xs sm:aspect-auto sm:h-64 lg:h-75.75">
+                      <Link to={trip.slug ? `/packages/${trip.slug}` : '/packages'} className="group relative block aspect-16/10 overflow-hidden rounded-xs sm:aspect-auto sm:h-64 lg:h-75.75">
                         <img
                           src={trip.image}
                           alt={trip.title}
@@ -40,7 +40,7 @@ export default function PopularTrips({ trips }) {
                         <span>{trip.location}</span>
                       </p>
                       <h3 className="mb-3 font-sans text-base font-semibold sm:text-lg">
-                        <Link to="/#contact" className="text-[#101828] hover:text-[#f75d37]">
+                        <Link to={trip.slug ? `/packages/${trip.slug}` : '/packages'} className="text-[#101828] hover:text-[#f75d37]">
                           {trip.title}
                         </Link>
                       </h3>
