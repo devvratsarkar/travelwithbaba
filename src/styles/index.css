@@ -34,9 +34,18 @@ body {
   display: inline-block;
   position: relative;
   perspective: 300px;
+  margin-top: 0.12em;
   text-align: start;
   vertical-align: bottom;
+  line-height: 0.85;
   transition: width 0.5s;
+}
+
+@media (width < 48rem) {
+  .headline-flip {
+    display: block;
+    font-size: 1.35em;
+  }
 }
 
 .headline-flip span {
