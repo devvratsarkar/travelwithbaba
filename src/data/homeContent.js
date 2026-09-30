@@ -29,7 +29,7 @@ export const contact = {
 
 export const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/#about' },
+  { label: 'About Us', to: '/about' },
   {
     label: 'Packages',
     to: '/packages',
@@ -40,7 +40,7 @@ export const navItems = [
     })),
   },
   { label: 'Blog', to: '/#blog' },
-  { label: 'Contact Us', to: '/#contact' },
+  { label: 'Contact Us', to: '/contact' },
 ]
 
 export const socialLinks = [

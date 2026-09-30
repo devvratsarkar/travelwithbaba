@@ -76,7 +76,7 @@ export default function AboutSection() {
           <div className="p-2.5">
             <div className="flex flex-col items-start gap-5 p-2.5">
               <Link
-                to="/#about"
+                to="/about"
                 className="inline-block rounded-xs bg-gold px-6 py-3 font-label text-lg font-semibold text-black transition duration-300"
               >
                 Who We Are
