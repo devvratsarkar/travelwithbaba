@@ -39,7 +39,7 @@ export const navItems = [
       group: category.group,
     })),
   },
-  { label: 'Blog', to: '/#blog' },
+  { label: 'Testimonials', to: '/testimonials' },
   { label: 'Contact Us', to: '/contact' },
 ]
 
@@ -168,30 +168,6 @@ export const testimonials = [
   {
     name: '19 Mar 2026',
     text: 'We are looking for a travel agent that provides tour packages to exotic locations. I am really glad that I found this organization. Unlike others, it has genuine connections and thus it offers interesting packages. I would genuinely like to recommend this company to everyone.',
-  },
-]
-
-export const posts = [
-  {
-    title: 'Passport and Visa Help from Varanasi',
-    date: '2026-03-02',
-    excerpt:
-      'Travel with Baba helps with passport forms, student visas, and work permits. Share your identity and address papers, and the Varanasi desk guides the filing.',
-    image: asset('2026/08/image_0-14.png'),
-  },
-  {
-    title: 'A Varanasi Temple Circuit: Ghats, Durga Temple, and Kashi Vishwanath',
-    date: '2026-03-12',
-    excerpt:
-      'The one-day Varanasi tour covers Durga Temple, Kashi Vishwanath Temple, and Ramnagar Fort. Longer stays add Sarnath, Mirzapur, and time on the ghats.',
-    image: asset('2026/08/image_0-13.png'),
-  },
-  {
-    title: 'Bodhgaya and Prayagraj from Varanasi',
-    date: '2026-03-19',
-    excerpt:
-      'The five-day tour links Prayagraj, Varanasi, Bodhgaya, Sarnath, Allahabad Fort, and Gaya. Ask for the price, then we arrange the stays and the road plan.',
-    image: asset('2026/08/image_0-12.png'),
   },
 ]
 

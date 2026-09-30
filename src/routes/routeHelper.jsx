@@ -1,6 +1,7 @@
 import MainLayout from '../components/layout/MainLayout.jsx'
 import AboutPage from '../pages/about/AboutPage'
 import ContactPage from '../pages/contact/ContactPage'
+import TestimonialsPage from '../pages/testimonials/TestimonialsPage'
 import HomePage from '../pages/home/Home'
 import PackageDetailPage from '../pages/packages/PackageDetailPage'
 import PackagesPage from '../pages/packages/PackagesPage'
@@ -19,6 +20,10 @@ export const RouterData = [
       {
         path: '/about',
         element: <AboutPage />,
+      },
+      {
+        path: '/testimonials',
+        element: <TestimonialsPage />,
       },
       {
         path: '/contact',

@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import AboutSection from '../../components/home/AboutSection'
-import BlogSection from '../../components/home/BlogSection'
 import DestinationSection from '../../components/home/DestinationSection'
 import FeatureBar from '../../components/home/FeatureBar'
 import HeroSection from '../../components/home/HeroSection'
@@ -35,7 +34,6 @@ export default function HomePage() {
       <ProcessSection />
       <AboutSection />
       <TestimonialsSection />
-      <BlogSection />
     </>
   )
 }
