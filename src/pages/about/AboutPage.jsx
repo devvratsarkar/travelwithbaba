@@ -69,18 +69,22 @@ export default function AboutPage() {
                   <FiMapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
                   <span>{contact.address}</span>
                 </li>
-                <li>
-                  <a href={contact.phoneHref} className="flex gap-3 hover:text-primary">
-                    <FiPhone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                    <span>{contact.phone}</span>
-                  </a>
-                </li>
-                <li>
-                  <a href={`mailto:${contact.email}`} className="flex gap-3 hover:text-primary">
-                    <FiMail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                    <span className="break-all">{contact.email}</span>
-                  </a>
-                </li>
+                {contact.phones.map((item) => (
+                  <li key={item.href}>
+                    <a href={item.href} className="flex gap-3 hover:text-primary">
+                      <FiPhone className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                      <span>{item.label}</span>
+                    </a>
+                  </li>
+                ))}
+                {contact.emails.map((email) => (
+                  <li key={email}>
+                    <a href={`mailto:${email}`} className="flex gap-3 hover:text-primary">
+                      <FiMail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                      <span className="break-all">{email}</span>
+                    </a>
+                  </li>
+                ))}
               </ul>
               <Link
                 to="/packages"

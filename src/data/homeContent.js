@@ -22,7 +22,12 @@ export const contact = {
   address: 'Varanasi, Uttar Pradesh, India',
   phone: '+91 8707238117',
   phoneHref: 'tel:+918707238117',
+  phones: [
+    { label: '+91 8707238117', href: 'tel:+918707238117' },
+    { label: '+91 9532371554', href: 'tel:+919532371554' },
+  ],
   email: 'bhartibhole826@gmail.com',
+  emails: ['bhartibhole826@gmail.com', 'travelwithbabaa@gmail.com'],
   whatsapp:
     'https://api.whatsapp.com/send?phone=918707238117&text=Hello!%20I%20found%20your%20website%20and%20am%20interested%20in%20your%20packages.',
 }
@@ -40,6 +45,7 @@ export const navItems = [
     })),
   },
   { label: 'Testimonials', to: '/testimonials' },
+  { label: 'Payment', to: '/payment' },
   { label: 'Contact Us', to: '/contact' },
 ]
 

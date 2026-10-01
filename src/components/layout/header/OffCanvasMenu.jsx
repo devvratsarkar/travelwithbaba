@@ -69,15 +69,19 @@ export default function OffCanvasMenu({ open, onClose }) {
           <PrimaryMenu mobile onNavigate={onClose} />
         </div>
         <div className="border-t border-white/10 px-5 py-5">
-          <a href={contact.phoneHref} className="flex items-center gap-3 text-white">
-            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-black">
-              <FiPhone className="size-4" aria-hidden="true" />
-            </span>
-            <span>
-              <span className="block text-[11px] tracking-[0.14em] text-white/50 uppercase">Call {contact.person}</span>
-              <span className="mt-0.5 block text-sm font-medium">{contact.phone}</span>
-            </span>
-          </a>
+          <div className="space-y-3">
+            {contact.phones.map((item) => (
+              <a key={item.href} href={item.href} className="flex items-center gap-3 text-white">
+                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-gold text-black">
+                  <FiPhone className="size-4" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-[11px] tracking-[0.14em] text-white/50 uppercase">Call {contact.person}</span>
+                  <span className="mt-0.5 block text-sm font-medium">{item.label}</span>
+                </span>
+              </a>
+            ))}
+          </div>
           <p className="mt-3 flex items-start gap-3 text-sm leading-5 text-white/60">
             <FiMapPin className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />
             <span>{contact.address}</span>

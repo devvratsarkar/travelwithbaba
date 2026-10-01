@@ -30,7 +30,16 @@ export default function Footer() {
             <Logo className="logo-footer" />
           </Link>
           <p className="mt-4 max-w-xs text-[15px] leading-7 text-[#5c5c5c]">
-            Customized holidays from Varanasi, with passport, visa, and travel insurance. Write to {contact.email}.
+            Customized holidays from Varanasi, with passport, visa, and travel insurance. Write to{' '}
+            {contact.emails.map((email, index) => (
+              <span key={email}>
+                {index > 0 ? ' or ' : null}
+                <a href={`mailto:${email}`} className="break-all hover:text-black">
+                  {email}
+                </a>
+              </span>
+            ))}
+            .
           </p>
           <ul className="mt-6 flex items-center gap-1">
             {socialLinks.map((item) => (
@@ -80,12 +89,14 @@ export default function Footer() {
                 {contact.person}, {contact.address}
               </span>
             </li>
-            <li>
-              <a href={contact.phoneHref} className="inline-flex items-center gap-2.5 transition-colors hover:text-black">
-                <FiPhone className="size-4 shrink-0" aria-hidden="true" />
-                {contact.phone}
-              </a>
-            </li>
+            {contact.phones.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className="inline-flex items-center gap-2.5 transition-colors hover:text-black">
+                  <FiPhone className="size-4 shrink-0" aria-hidden="true" />
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           <form

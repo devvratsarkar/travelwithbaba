@@ -128,12 +128,15 @@ export default function PackageDetailPage() {
               >
                 Send Enquiry
               </a>
-              <a
-                href={contact.phoneHref}
-                className="rounded-full border border-black/15 px-4 py-3 text-center text-sm font-medium text-[#101828] hover:border-primary hover:text-primary"
-              >
-                Call {contact.phone}
-              </a>
+              {contact.phones.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-full border border-black/15 px-4 py-3 text-center text-sm font-medium text-[#101828] hover:border-primary hover:text-primary"
+                >
+                  Call {item.label}
+                </a>
+              ))}
             </div>
             <ul className="mt-5 flex flex-wrap gap-2">
               {item.themes.map((theme) => (

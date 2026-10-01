@@ -113,35 +113,44 @@ export default function ContactPage() {
               </div>
               <div>
                 <dt className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">Call Us</dt>
-                <dd className="mt-1">
-                  <a href={contact.phoneHref} className="inline-flex items-center gap-2 text-[#101828] hover:text-primary">
-                    <FiPhone className="size-4 text-primary" aria-hidden="true" />
-                    {contact.phone}
-                  </a>
+                <dd className="mt-1 space-y-2">
+                  {contact.phones.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="flex items-center gap-2 text-[#101828] hover:text-primary"
+                    >
+                      <FiPhone className="size-4 text-primary" aria-hidden="true" />
+                      {item.label}
+                    </a>
+                  ))}
                 </dd>
               </div>
               <div>
                 <dt className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">Email</dt>
-                <dd className="mt-1">
-                  <a
-                    href={`mailto:${contact.email}`}
-                    className="inline-flex items-center gap-2 break-all text-[#101828] hover:text-primary"
-                  >
-                    <FiMail className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                    {contact.email}
-                  </a>
+                <dd className="mt-1 space-y-2">
+                  {contact.emails.map((email) => (
+                    <a
+                      key={email}
+                      href={`mailto:${email}`}
+                      className="flex items-center gap-2 break-all text-[#101828] hover:text-primary"
+                    >
+                      <FiMail className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                      {email}
+                    </a>
+                  ))}
                 </dd>
               </div>
               <div>
                 <dt className="text-[11px] font-semibold tracking-[0.16em] text-primary uppercase">Web Address</dt>
                 <dd className="mt-1">
                   <a
-                    href="https://www.travelwithbaba.in"
+                    href="https://www.travelwithbaba.com"
                     target="_blank"
                     rel="noreferrer"
                     className="text-primary hover:underline"
                   >
-                    www.travelwithbaba.in
+                    www.travelwithbaba.com
                   </a>
                 </dd>
               </div>
